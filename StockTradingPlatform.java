@@ -1,6 +1,6 @@
 import java.util.*;
 
-// Class to represent a Stock
+
 class Stock {
     String symbol;
     double price;
@@ -10,7 +10,7 @@ class Stock {
         this.price = price;
     }
 
-    // Update stock price randomly between -2% to +2%
+    
     void updatePrice() {
         double changePercent = (Math.random() * 4) - 2; // -2% to +2%
         price += price * (changePercent / 100);
@@ -18,7 +18,7 @@ class Stock {
     }
 }
 
-// Class to represent a Trade (Buy or Sell operation)
+
 class Trade {
     Stock stock;
     int quantity;
@@ -39,7 +39,7 @@ class Trade {
     }
 }
 
-// Class to manage Portfolio
+
 class Portfolio {
     ArrayList<Trade> trades = new ArrayList<>();
     double totalProfit = 0;
@@ -50,7 +50,7 @@ class Portfolio {
         System.out.println("✅ Bought " + qty + " shares of " + stock.symbol + " at $" + stock.price);
     }
 
-    // Sell stock from portfolio
+    
     void sellStock(String symbol, int qty) {
         for (int i = 0; i < trades.size(); i++) {
             Trade t = trades.get(i);
@@ -111,7 +111,7 @@ class Portfolio {
     }
 }
 
-// Main Class
+
 public class StockTradingPlatform {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -190,7 +190,7 @@ public class StockTradingPlatform {
         scanner.close();
     }
 
-    // Simple recommendation engine
+    
     static String recommend(Stock s) {
         if (s.price < 100) return " (🟢 Good to BUY)";
         if (s.price > 2000) return " (🔴 Consider SELLING)";
